@@ -540,7 +540,7 @@ class AFIPController extends Controller
         if (!is_numeric($request->cuitl)){             
                          
             return response()->json([
-                'msg' => 'Invalid date: '. $request->cuitl.' not have number format'
+                'msg' => 'Invalid date: '. $request->cuitl.' not have number format"
             ]); 
         }
          
