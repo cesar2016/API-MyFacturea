@@ -1,11 +1,18 @@
 <?php
 
+
+// # Explicacion del LOGIN de laravel y auth: https://www.youtube.com/watch?v=coSV-njT1Gk&t=499s
+// .En este archivo esta toda la logica del LOGIN: -> vendor/laravel/ui/auth-backend/AutenticatesUsers.php
+// # EMAIL: tutotorial -> https://www.youtube.com/watch?v=e0ynchA_sBA
+
 namespace App\Http\Controllers;
 
+use App\Mail\createtoken;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class AuthController extends Controller
 {
@@ -44,19 +51,27 @@ class AuthController extends Controller
             ], 401);            
 
         }
-
-        $user = User::where('email', $request['email'])->firstOrFail();
-        $token = $user->createToken('auth_token')->plainTextToken;
-
-        return response()->json([
-            'access_token' => $token,
-            'token_type' => 'Bearer' 
-        ]);
+        
     }
 
     public function info_user(Request $request)
     {
         return $request->user();
+        
+    }
+
+    public function mail_token()
+    {
+        
+        $mail_user = auth()->user()->email; 
+
+        $mail_token = new createtoken;
+        Mail::to($mail_user)->send($mail_token);
+
+        return response()->json([
+            'msg' => "Genial!, te enviamos un correo a, ". $mail_user." con el nuevo TOKEN generado",
+        ]);
+         
     }
 
 }
