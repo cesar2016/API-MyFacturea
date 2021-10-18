@@ -221,12 +221,7 @@ class AFIPController extends Controller
 
         return response()->json($dates_invoice_c);
         
-        die();
-
-
         
-
-             
     }
 
     public function statusService(){
@@ -238,9 +233,17 @@ class AFIPController extends Controller
 
             $server_status = $afip->ElectronicBilling->GetServerStatus();
 
+            if(!$server_status){
+
+                return response()->json([
+                    'msg' => 'Ups!, Not have dates fiscales!'
+                ]);
+
+            }
+
            return response()->json([
                 $server_status
-        ]);           
+            ]);           
         
     }
 
