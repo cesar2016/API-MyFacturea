@@ -18,9 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/* Route::get('/mail_token', function () {
-    return view('mail_token');
-}); */
+Route::get('/test', function () {
+    return view('test');
+
+});
 
 Route::get('/mail_token', [App\Http\Controllers\AuthController::class, 'mail_token'])->name('mail_token');
 
