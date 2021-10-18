@@ -40,7 +40,8 @@
             
             $.ajax({
                 // la URL para la petición
-                url : 'http://mifacturea.test/mail_token',
+                //url : 'http://mifacturea.test/mail_token', //dev
+                url : 'http://3.21.240.248/.test/mail_token', //Product-test
                 type : 'GET',                    
                 dataType : 'json', 
 

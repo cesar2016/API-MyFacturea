@@ -130,7 +130,7 @@ a:hover {
                         <div class="one"><a href="{{ route('register') }}">Registrate</a></div>
                         <div class="two "> </div>
                         <div class="three"><a  href="{{ route('password.request') }}">Recuperar Clave</a></div>
-                      </div>             
+                    </div>             
                        
 				</form>
                 <div class="d-autor">
