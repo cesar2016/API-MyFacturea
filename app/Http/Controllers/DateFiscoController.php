@@ -66,10 +66,13 @@ class DateFiscoController extends Controller
 
         $datesInsert = $dates->save();
 
-        if($datesInsert == true){
-            return response()->json(['msg'=>'Succes Insert Dates']);
+        if($datesInsert == true){ 
+
+            return redirect()->back()->with('success', 'Bien! registro creado con exito!');
+            
+
         }else{
-            return response()->json(['msg'=>'Error Insert dates']); 
+            return response()->json(['msg'=>'Error update dates']); 
         }
  
          

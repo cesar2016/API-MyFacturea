@@ -15,6 +15,13 @@
                             </div>
                         @endforeach
                     @endif
+                    @if (Session::has('success'))
+                        <div class="alert alert-success">
+                            <ul>
+                                <li>{{ Session::get('success') }}</li>
+                            </ul>
+                        </div>
+                    @endif
                         <h1>
                             {{ __('Bienvenido a Facturea-API ') }}
                         </h1>
