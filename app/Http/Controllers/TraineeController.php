@@ -21,4 +21,15 @@ class TraineeController extends Controller
 
 
     }
+    public function prueba() //Guarda los codigos de los IMPUESTOS
+    {       
+
+        for ($i=1; $i <= 14; $i++) {           
+             
+            return response()->json(['msg' => 'Testing Code']);
+        };
+              
+
+
+    }
 }

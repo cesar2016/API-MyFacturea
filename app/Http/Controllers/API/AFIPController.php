@@ -61,10 +61,11 @@ class AFIPController extends Controller
         $this->middleware(function ($request, $next) { //Asi defino el cuit Global
 
             $idUser = Auth::user()->id;
-            $datesFisco = DateFisco::where('user_id', $idUser)->get();
-            $this->myCuit = $datesFisco[0]->cuit;
+            $datesFisco = DateFisco::where('user_id', $idUser)->get(); 
 
+            $this->myCuit = $datesFisco[0]->cuit;
             return $next($request);
+             
         });  
         
         $this->middleware(function ($request, $next) { //Asi defino el ID USER Global
@@ -74,6 +75,7 @@ class AFIPController extends Controller
         });   
           
     }
+    
 
     public function create_invoice_C(Request $request){
         
@@ -224,22 +226,14 @@ class AFIPController extends Controller
         
     }
 
-    public function statusService(){
-        
-        $afip = new Afip(array(
+    public function statusService(){ 
+          
+        $afip = new Afip(array( 
 
             'CUIT' => $this->myCuit, //Cuit del vendedor             
             'production' => true));
 
-            $server_status = $afip->ElectronicBilling->GetServerStatus();
-
-            if(!$server_status){
-
-                return response()->json([
-                    'msg' => 'Ups!, Not have dates fiscales!'
-                ]);
-
-            }
+            $server_status = $afip->ElectronicBilling->GetServerStatus(); 
 
            return response()->json([
                 $server_status
@@ -465,6 +459,7 @@ class AFIPController extends Controller
 
 
     // +++++++++++++++ # My Functions ++++++++++++++++++ //
+
 
     public function format_date($date)
     {         

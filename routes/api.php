@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\API\AFIPController;
-use App\Http\Controllers\API\DateFiscoController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TraineeController;
 use App\Http\Middleware\Authenticate;
@@ -33,8 +32,7 @@ Route::post('/login',[ AuthController::class, 'login']);
 
 Route::group(['middleware' => ['auth:sanctum']], function() {
 
-    Route::post('/info_user',[ AuthController::class, 'info_user']); // Obtener indo del User
-
+    Route::post('/info_user',[ AuthController::class, 'info_user']); // Obtener indo del User 
     // # Metodos del SDK AFIP
     Route::get('/invoice', [AFIPController::class, 'invoice'])->name('invoice');
     Route::post('/datesBussin', [AFIPController::class, 'datesBussin'])->name('datesBussin'); 
@@ -46,19 +44,24 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::get('/typeDocuments', [AFIPController::class, 'typeDocuments'])->name('typeDocuments');    
     Route::get('/barCode', [AFIPController::class, 'barCode'])->name('barCode');
     Route::get('/qr', [AFIPController::class, 'qr'])->name('qr');
-    Route::get('/idUser', [Controller::class, 'idUser'])->name('idUser');*/
-
+    Route::get('/idUser', [Controller::class, 'idUser'])->name('idUser');*/ 
+    
     // # Invoices 
     Route::post('/create_invoice_C', [AFIPController::class, 'create_invoice_C'])->name('create_invoice_C'); 
-
-    // # CRUD DATOS FISCALES
-    Route::apiResource('create_dates', DateFiscoController::class);
-
     // # Just trainee
     Route::get('/operation', [TraineeController::class, 'operation']);
+
+    Route::get('/prueba', [TraineeController::class, 'prueba']);
+
      
 
 });
+
+ 
+
+
+
+
 
 
 

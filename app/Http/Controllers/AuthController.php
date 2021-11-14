@@ -50,6 +50,10 @@ class AuthController extends Controller
 
             ], 401);            
 
+        }else{
+            return response()->json([
+                'message' => 'Hello '. $request->email
+            ], 401);
         }
         
     }

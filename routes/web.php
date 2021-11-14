@@ -1,7 +1,8 @@
 <?php
 
+
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Route; 
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('/welcome');
 });
 
 Route::get('/test', function () {
@@ -23,9 +24,21 @@ Route::get('/test', function () {
 
 });
 
+Route::get('/pt', function () {
+    return view('pt'); 
+});
+
+Route::get('/myDates', function () {
+    return view('myDates'); 
+});
+
+// # CRUD DATOS FISCALES
 Route::get('/mail_token', [App\Http\Controllers\AuthController::class, 'mail_token'])->name('mail_token');
+
+// # CRUD DATOS FISCALES - Datos del
+Route::resource('/create_dates', App\Http\Controllers\DateFiscoController::class); 
 
 
 Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

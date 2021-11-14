@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DateFisco;
+use App\Models\Impuesto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $idUser = Auth::user()->id;
+
+        $impuestos = Impuesto::all(); 
+        $dates = DateFisco::where('user_id', $idUser)->first();
+
+        return view('home', ['impuestos' => $impuestos], ['dates' => $dates]);
     }
 }

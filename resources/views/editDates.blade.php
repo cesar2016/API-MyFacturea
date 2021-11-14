@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header bg-primary text-white"><h4>{{ __('Panel de control') }}</h4></div>  
+                <div class="card-header bg-warning text-white"><h4>{{ __('Panel de control') }}</h4></div>  
 
                 <div class="card-body">
                     @if ($errors->any())
@@ -15,32 +15,37 @@
                             </div>
                         @endforeach
                     @endif
+ 
                         <h1>
-                            {{ __('Bienvenido a Facturea-API ') }}
+                            {{ __('Formulario de actualizacion ') }}
                         </h1>
-                        <strong>Completa el siguiente formulario para conseguir tu API TOKEN</strong>
+                        <strong>ACTUALIZA TUS DATOS COMERCIALES</strong>
 
-                        <div class="jumbotron border border-primary">
-                            <form method="POST" action="{{ route('create_dates.store') }}">
+                        <div class="jumbotron border border-warning">
+                            @foreach ($datesUpdates as $datesUpdate) 
+                            <form method="POST" action="{{ route('create_dates.update', $datesUpdate->id) }}"> 
+
                                 @csrf
+                                @method('PATCH') 
                                 
                                 <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="inputEmail4">NOMBRE DE FANTASIA</label>
-                                    <input type="text" class="form-control" value="{{old('nombre_fantasia')}}" name="nombre_fantasia" placeholder="Ej: Ferre-Fix">
+                                    <input type="text" class="form-control" value="{{$datesUpdate->nombre_fantasia}}" name="nombre_fantasia" placeholder="Ej: Ferre-Fix">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="inputEmail4">DOMICILIO COMERCIAL</label>
-                                    <input type="text" class="form-control" value="{{old('domicilio_comercial')}}" name="domicilio_comercial" placeholder="Ej: Conrad 869 Localidad...">
+                                    <input type="text" class="form-control" value="{{$datesUpdate->domicilio_comercial}}" name="domicilio_comercial" placeholder="Ej: Conrad 869 Localidad...">
                                 </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputAddress">RAZON SOCIAL</label>
-                                    <input type="text" class="form-control" value="{{old('razon_social')}}" name="razon_social" placeholder="Ej: Sergio Hernan Laccatier"> 
+                                    <input type="text" class="form-control" value="{{$datesUpdate->razon_social}}" name="razon_social" placeholder="Ej: Sergio Hernan Laccatier"> 
                                 </div>
                                 <div class="form-group">
                                     <label for="inputCity">CONDICION ANTE EL IVA</label>
-                                    <select id="inputState" class="form-control" value="{{old('condicion_iva')}}" name="condicion_iva">
+                                    <select id="inputState" class="form-control" value="{{$datesUpdate->condicion_iva}}" name="condicion_iva">
+                                         <option value="{{$impuestos[$datesUpdate->condicion_iva -1]->codigo}}">{{ $impuestos[$datesUpdate->condicion_iva -1]->description}}</option>
                                         @foreach ($impuestos as $impuesto)
                                             <option value="{{$impuesto->codigo}}">{{$impuesto->description}}</option> 
                                         @endforeach
@@ -49,53 +54,53 @@
                                 <div class="form-row">                                    
                                     <div class="form-group col-md-6">
                                         <label for="inputCity">TIPO DE FACTURA A EMITIR</label>
-                                        <select id="inputState" class="form-control" value="{{old('code_tipo_fac')}}" name="code_tipo_fac">
-                                            <option value="1">FACTURA  "A" </option> 
-                                            <option value="6">FACTURA  "B" </option> 
-                                            <option value="11">FACTURA  "C" </option>  
+                                        <select id="inputState" class="form-control" value="{{$datesUpdate->code_tipo_fac}}" name="code_tipo_fac">
+                                            <option value="1"
+                                            @if ($datesUpdate->code_tipo_fac == 1)
+                                                selected
+                                            @endif
+                                            >FACTURA  "A" </option> 
+                                            <option value="6"
+                                            @if ($datesUpdate->code_tipo_fac == 6)
+                                                selected
+                                            @endif
+                                            >FACTURA  "B" </option> 
+                                            <option value="11"
+                                            @if ($datesUpdate->code_tipo_fac == 11)
+                                                selected
+                                            @endif
+                                            >FACTURA  "C" </option>  
                                         </select>                                
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputZip">PUNTO DE VENTA</label>
-                                        <input type="text" class="form-control" value="{{old('punto_venta') }}" name="punto_venta" placeholder="Ej: 4">
+                                        <input type="text" class="form-control" value="{{$datesUpdate->punto_venta}}" name="punto_venta" placeholder="Ej: 4">
                                         <small id="emailHelp" class="form-text text-muted">Solo numeros sin anteponer ceros.</small>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                 <div class="form-group col-md-4">
                                     <label for="inputCity">CUIT</label>
-                                    <input type="text" class="form-control" value="{{old('cuit')}}" name="cuit" placeholder="Ej: 26107446339">
+                                    <input type="text" class="form-control" value="{{$datesUpdate->cuit}}" name="cuit" placeholder="Ej: 26107446339">
                                     <small id="emailHelp" class="form-text text-muted">Solo numeros sin guiones ni espacios.</small>
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="inputCity">IIBB</label>
-                                    <input type="text" class="form-control" value="{{old('IIBB')}}" name="IIBB" placeholder="Ej: 000-000000-0">                                
+                                    <input type="text" class="form-control" value="{{$datesUpdate->IIBB}}" name="IIBB" placeholder="Ej: 000-000000-0">                                
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="inputZip">FECHA INIC. DE ACTIVIDAD</label>
-                                    <input type="date" class="form-control" value="{{old('fecha_Init_actividad')}}" name="fecha_Init_actividad">
+                                    <input type="date" class="form-control" value="{{$datesUpdate->fecha_Init_actividad}}" name="fecha_Init_actividad">
                                 </div>
                                 </div>
                                 <div class="form-group">
-                                    {{-- <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="gridCheck">
-                                        <label class="form-check-label" for="gridCheck">
-                                        Check me out
-                                        </label>
-                                    </div> --}}
+                                     
                                 </div>
-                                <button type="submit" class="btn btn-primary">ENVIAR</button>
+                                <button type="submit" class="btn btn-warning">ENVIAR</button>
+                               
                             </form>
-                        </div>
-
-                        @if ($dates) 
-                         
-                            <div class="content">
-                                <button id="btnToken" type="button" class="btn btn-primary btn-lg active">SOLICITAR NUEVO TOKEN</button>
-                                <a href="/create_dates" class="btn btn-success btn-lg active" role="button" aria-pressed="true">Mis datos comerciales</a>
-                            </div>
-                            
-                        @endif
+                            @endforeach
+                        </div> 
                    
                     <br>
                     <div id="msg"> 
