@@ -72,7 +72,7 @@ class DateFiscoController extends Controller
             
 
         }else{
-            return response()->json(['msg'=>'Error update dates']); 
+            return response()->json(['msg'=>'Error create dates']); 
         }
  
          
@@ -154,6 +154,8 @@ class DateFiscoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DateFisco::find($id)->delete();
+        return redirect('home');
+         
     }
 }

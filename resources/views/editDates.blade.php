@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header bg-warning text-white"><h4>{{ __('Panel de control') }}</h4></div>  
+                <div class="card-header bg-info text-white"><h4>{{ __('Panel de control') }}</h4></div>  
 
                 <div class="card-body">
                     @if ($errors->any())
@@ -21,7 +21,7 @@
                         </h1>
                         <strong>ACTUALIZA TUS DATOS COMERCIALES</strong>
 
-                        <div class="jumbotron border border-warning">
+                        <div class="jumbotron border border-info">
                             @foreach ($datesUpdates as $datesUpdate) 
                             <form method="POST" action="{{ route('create_dates.update', $datesUpdate->id) }}"> 
 
@@ -96,7 +96,7 @@
                                 <div class="form-group">
                                      
                                 </div>
-                                <button type="submit" class="btn btn-warning">ENVIAR</button>
+                                <button type="submit" class="btn btn-info text-white">CAMBIAR</button>
                                
                             </form>
                             @endforeach
