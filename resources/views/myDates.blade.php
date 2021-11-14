@@ -34,7 +34,7 @@
             <td>{{ $dates_fisco->code_tipo_fac }}</td>
             <td>{{ $dates_fisco->punto_venta }}</td>
             <td>
-                <a href="{{ url('create_dates', $dates_fisco->user_id) }}" class="btn btn-outline-primary btn-sm" role="button" aria-pressed="true"><i class="fa fa-pencil"></i></a>
+                <a href="{{ url('create_dates', $dates_fisco->id) }}" class="btn btn-outline-primary btn-sm" role="button" aria-pressed="true"><i class="fa fa-pencil"></i></a>
                 <a href="/myDates" class="btn btn-outline-danger btn-sm" role="button" aria-pressed="true"><i class=" fa fa-trash"></i></a> 
 
             </td>
