@@ -514,10 +514,10 @@ class AFIPController extends Controller
                     for ($i=0; $i < count($impuestosAFIP); $i++) { 
                         if($impuestosAFIP[$i]->idImpuesto == $request->condition_front_iva){
 
-                            return $taxpayer_details;
+                            return 2; //Error
 
                         }else{
-                            return 2;
+                            return $taxpayer_details;
                         }
                        // echo $impuestosAFIP[$i]->idImpuesto; //ASi navegamos para sacar el id de Impuesto
                     }
@@ -525,7 +525,7 @@ class AFIPController extends Controller
             }
 
             if(!$taxpayer_details){
-                return 3;
+                return 3; //No Existe
             }
 
             
