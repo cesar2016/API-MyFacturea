@@ -38,8 +38,9 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::post('/datesBussin', [AFIPController::class, 'datesBussin'])->name('datesBussin'); 
     Route::post('/datesPerson', [AFIPController::class, 'datesPerson'])->name('datesPerson'); 
     Route::get('/statusService', [AFIPController::class, 'statusService'])->name('statusService');
-    /*Route::get('/pointSale', [AFIPController::class, 'pointSale'])->name('pointSale');
     Route::get('/typeVoucher', [AFIPController::class, 'typeVoucher'])->name('typeVoucher');
+
+    /*Route::get('/pointSale', [AFIPController::class, 'pointSale'])->name('pointSale');
     Route::get('/typeConcepts', [AFIPController::class, 'typeConcepts'])->name('typeConcepts');
     Route::get('/typeDocuments', [AFIPController::class, 'typeDocuments'])->name('typeDocuments');    
     Route::get('/barCode', [AFIPController::class, 'barCode'])->name('barCode');
