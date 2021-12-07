@@ -39,6 +39,7 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::post('/datesPerson', [AFIPController::class, 'datesPerson'])->name('datesPerson'); 
     Route::get('/statusService', [AFIPController::class, 'statusService'])->name('statusService');
     Route::get('/typeVoucher', [AFIPController::class, 'typeVoucher'])->name('typeVoucher');
+    Route::get('myDatesFisco/find/{id}', [AFIPController::class, 'myDatesFisco'])->name('myDatesFisco');
 
     /*Route::get('/pointSale', [AFIPController::class, 'pointSale'])->name('pointSale');
     Route::get('/typeConcepts', [AFIPController::class, 'typeConcepts'])->name('typeConcepts');

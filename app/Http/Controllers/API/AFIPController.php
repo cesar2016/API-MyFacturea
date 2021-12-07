@@ -76,6 +76,10 @@ class AFIPController extends Controller
           
     }
     
+    public function myDatesFisco($id){
+        $dates_fiscos = DateFisco::where('user_id', $id)->get();
+        return $dates_fiscos;
+    }
 
     public function create_invoice_C(Request $request){
         
