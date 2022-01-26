@@ -481,7 +481,7 @@ class AFIPController extends Controller
     public function format_date_normal($date)
     {         
         //$date = "2021-10-11";
-        $format_date=DateTime::createFromFormat('Y-m-d', $date);
+        $format_date=DateTime::createFromFormat('Ymd', $date);
         $day=$format_date->format('d');
         $month=$format_date->format('m');
         $year=$format_date->format('Y');
