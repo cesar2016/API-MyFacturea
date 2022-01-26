@@ -30,7 +30,7 @@ Código 013 NOTA DE CREDITO C
  */
 
 // # Formato de impresion de al FACTURA
-// https://groups.google.com/g/pyafipws/c/6uhybAm 3ZbA/m/2Gg6k8BuAQAJ
+// https://groups.google.com/g/pyafipws/c/6uhybAm3ZbA/m/2Gg6k8BuAQAJ
 
 // # Codigo Documentos AFIP 
 //http://biblioteca.afip.gob.ar/pdfp/RG_100_AFIP_ART1_V2.pdf
@@ -223,9 +223,10 @@ class AFIPController extends Controller
 
         ];
 
+        $res = $afip->ElectronicBilling->CreateVoucher($dates_invoice_c);
         //echo "<pre>"; print_r($dates_invoice_c);
 
-        return response()->json($dates_invoice_c);
+        return response()->json($res);
         
         
     }
