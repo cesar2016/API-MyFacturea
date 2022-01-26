@@ -157,10 +157,10 @@ class AFIPController extends Controller
             'CbteFch' 	=> intval(date('Ymd')),//$date_cte, //intval(date('Ymd')), (Opcional) Fecha del comprobante (yyyymmdd) o fecha actual si es nulo *
             'ImpTotal' 	=> 100, //$request->total_amount, // Importe total del comprobante * 
             'ImpTotConc'=> 0,            
-            /*'ImpNeto' => 0, //$request->total_amount, // Importe neto gravado, al colocar este valor > que  0 tienen que exitir tambien IVA
+            'ImpNeto' => 0, //$request->total_amount, // Importe neto gravado, al colocar este valor > que  0 tienen que exitir tambien IVA
             'ImpOpEx' 	=> 0,   // Importe exento de IVA
             'ImpIVA' 	=> 0,  //Importe total de IVA
-            'ImpTrib' 	=> 0,   //Importe total de tributos */
+            'ImpTrib' 	=> 0,   //Importe total de tributos
             //'FchServDesde' 	=> $date_init, // (Opcional) Fecha de inicio del servicio (yyyymmdd), obligatorio para Concepto 2 y 3
             //'FchServHasta' 	=> $date_end, // (Opcional) Fecha de fin del servicio (yyyymmdd), obligatorio para Concepto 2 y 3
             //'FchVtoPago' 	=> $date_expir, // (Opcional) Fecha de vencimiento del servicio (yyyymmdd), obligatorio para Concepto 2 y 3   
