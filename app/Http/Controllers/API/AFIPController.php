@@ -146,10 +146,10 @@ class AFIPController extends Controller
         $valfac = $last_voucher + 1;        
 
         $data = array(  
-
-            'PtoVta' 	=> $myDateComerce->punto_venta,  // Punto de venta *
-            'CbteTipo' 	=> $myDateComerce->code_tipo_fac,  // Tipo de comprobante (ver tipos disponibles) *
-            'Concepto' 	=> $request->type_concept,  // Concepto del Comprobante: (1)Productos, (2)Servicios, (3)Productos y Servicios *
+            'CantReg' 	=> 1,  // Cantidad de comprobantes a registrar
+            'PtoVta' 	=> 1,//$myDateComerce->punto_venta,  // Punto de venta *
+            'CbteTipo' 	=> 6,//$myDateComerce->code_tipo_fac,  // Tipo de comprobante (ver tipos disponibles) *
+            'Concepto' 	=> 1,//$request->type_concept,  // Concepto del Comprobante: (1)Productos, (2)Servicios, (3)Productos y Servicios *
             'DocTipo' 	=> 99,//$this->tipos_doc[$request->type_doc], // Tipo de documento del comprador (99 consumidor final, ver tipos disponibles) *
             'DocNro' 	=> 0,//$request->indetification_client,  // Número de documento del comprador (0 consumidor final) *
             'CbteDesde' => $valfac,  // Número de comprobante o numero del primer comprobante en caso de ser mas de uno *
@@ -161,8 +161,8 @@ class AFIPController extends Controller
             'ImpOpEx' 	=> 0,   // Importe exento de IVA
             'ImpIVA' 	=> 0,  //Importe total de IVA
             'ImpTrib' 	=> 0,   //Importe total de tributos
-            'FchServDesde' 	=> $date_init, // (Opcional) Fecha de inicio del servicio (yyyymmdd), obligatorio para Concepto 2 y 3
-            'FchServHasta' 	=> $date_end, // (Opcional) Fecha de fin del servicio (yyyymmdd), obligatorio para Concepto 2 y 3
+            //'FchServDesde' 	=> $date_init, // (Opcional) Fecha de inicio del servicio (yyyymmdd), obligatorio para Concepto 2 y 3
+            //'FchServHasta' 	=> $date_end, // (Opcional) Fecha de fin del servicio (yyyymmdd), obligatorio para Concepto 2 y 3
             'FchVtoPago' 	=> $date_expir, // (Opcional) Fecha de vencimiento del servicio (yyyymmdd), obligatorio para Concepto 2 y 3   
             'MonId' 	=> $request->currencies_types, //Tipo de moneda usada en el comprobante (ver tipos disponibles)('PES' para pesos argentinos, 'DOL' para dolares) *
             'MonCotiz' 	=> 1,     // Cotización de la moneda usada (1 para pesos argentinos)  
