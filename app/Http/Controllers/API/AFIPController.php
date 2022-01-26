@@ -141,7 +141,7 @@ class AFIPController extends Controller
 
        
         //Devuelve el número del último comprobante creado para el punto de venta 1 y el tipo de comprobante 6 (Factura B)   
-        $last_voucher = $afip->ElectronicBilling->GetLastVoucher($myDateComerce->punto_venta, $myDateComerce->code_tipo_fac);
+        $last_voucher = $afip->ElectronicBilling->GetLastVoucher(1, 6);
         
         $valfac = $last_voucher + 1;        
 
