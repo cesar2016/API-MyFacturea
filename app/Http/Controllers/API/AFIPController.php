@@ -155,7 +155,7 @@ class AFIPController extends Controller
             'CbteDesde' => $valfac,  // Número de comprobante o numero del primer comprobante en caso de ser mas de uno *
             'CbteHasta' => $valfac,  // Número de comprobante o numero del último comprobante en caso de ser mas de uno *
             'CbteFch' 	=> intval(date('Ymd')),//$date_cte, //intval(date('Ymd')), (Opcional) Fecha del comprobante (yyyymmdd) o fecha actual si es nulo *
-            'ImpTotal' 	=> $request->total_amount, // Importe total del comprobante * 
+            'ImpTotal' 	=> 100, //$request->total_amount, // Importe total del comprobante * 
             'ImpTotConc'=> 0,            
             'ImpNeto' 	=> 0, //$request->total_amount, // Importe neto gravado, al colocar este valor > que  0 tienen que exitir tambien IVA
             'ImpOpEx' 	=> 0,   // Importe exento de IVA
