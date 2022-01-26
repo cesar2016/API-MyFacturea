@@ -140,7 +140,7 @@ class AFIPController extends Controller
         }
 
        
-        /* //Devuelve el número del último comprobante creado para el punto de venta 1 y el tipo de comprobante 6 (Factura B)   
+        //Devuelve el número del último comprobante creado para el punto de venta 1 y el tipo de comprobante 6 (Factura B)   
         $last_voucher = $afip->ElectronicBilling->GetLastVoucher($myDateComerce->punto_venta, $myDateComerce->code_tipo_fac);
         
         $valfac = $last_voucher + 1;        
@@ -168,12 +168,13 @@ class AFIPController extends Controller
             'MonCotiz' 	=> 1,     // Cotización de la moneda usada (1 para pesos argentinos)  
             
         );
+        
 
         $res = $afip->ElectronicBilling->CreateVoucher($data);
-        echo $res['CAE']; //CAE asignado el comprobante
+        /* echo $res['CAE']; //CAE asignado el comprobante
         echo $res['CAEFchVto']; //Fecha de vencimiento del CAE (yyyy-mm-dd)
         echo " <br><br> ";
-        echo '<pre>'; print_r($res);  */  
+        echo '<pre>'; print_r($res); */
         
         // # Buscamos en la tabla de nuestra DB
         $condition_front_iva = Impuesto::findOrFail($request->id_impuesto); 
@@ -183,6 +184,7 @@ class AFIPController extends Controller
         $code_type_invoice = "00".$myDateComerce->code_tipo_fac; // El que va abajo de la letra en el cuadro central         
  
         $dates_invoice_c = [
+            
 
             // # Info Izquierda:  Datos de la empresa que emite la fac.
             "razon_social" => $myDateComerce->razon_social, // del comercio que emite
@@ -196,7 +198,7 @@ class AFIPController extends Controller
             // # Info Derecha, sobre el comerciante vendedor
             "type_voucher" => $voucher, // FACTURA, Nota de Cred, Nota de Deb
             "pto_venta" => "00".$myDateComerce->punto_venta,
-            "numero_cvte" => 6, //$valfac,
+            "numero_cvte" => 6, //$ ,
             "date_emision" => $this->format_date_normal($date_cte),
             "cuit" => $myDateComerce->cuit,
             "iibb" => $myDateComerce->IIBB,
@@ -217,16 +219,16 @@ class AFIPController extends Controller
             "total_amount" => $request->total_amount, 
 
             // # Pie de la factura
-            "cae" =>  "",//$res['CAE'],
-            "expire_cae" => "",//$res['CAEFchVto'],
+            "cae" =>  $res['CAE'],
+            "expire_cae" => $res['CAEFchVto'],
             "code_QR" => ""
 
         ];
 
-        $res = $afip->ElectronicBilling->CreateVoucher($dates_invoice_c);
+        
         //echo "<pre>"; print_r($dates_invoice_c);
 
-        return response()->json($res);
+        return response()->json($$dates_invoice_c);
         
         
     }
