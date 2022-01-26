@@ -150,7 +150,7 @@ class AFIPController extends Controller
             'PtoVta' 	=> $myDateComerce->punto_venta,  // Punto de venta *
             'CbteTipo' 	=> $myDateComerce->code_tipo_fac,  // Tipo de comprobante (ver tipos disponibles) *
             'Concepto' 	=> $request->type_concept,  // Concepto del Comprobante: (1)Productos, (2)Servicios, (3)Productos y Servicios *
-            'DocTipo' 	=> $this->tipos_doc[$request->type_doc], // Tipo de documento del comprador (99 consumidor final, ver tipos disponibles) *
+            'DocTipo' 	=> 99,//$this->tipos_doc[$request->type_doc], // Tipo de documento del comprador (99 consumidor final, ver tipos disponibles) *
             'DocNro' 	=> $request->indetification_client,  // Número de documento del comprador (0 consumidor final) *
             'CbteDesde' => $valfac,  // Número de comprobante o numero del primer comprobante en caso de ser mas de uno *
             'CbteHasta' => $valfac,  // Número de comprobante o numero del último comprobante en caso de ser mas de uno *
