@@ -141,7 +141,7 @@ class AFIPController extends Controller
 
        
         //Devuelve el número del último comprobante creado para el punto de venta 1 y el tipo de comprobante 6 (Factura B)   
-        $last_voucher = $afip->ElectronicBilling->GetLastVoucher(1, 6);
+        $last_voucher = $afip->ElectronicBilling->GetLastVoucher(1, 11);
         
         $valfac = $last_voucher + 1;        
 
@@ -156,11 +156,11 @@ class AFIPController extends Controller
             'CbteHasta' => $valfac,  // Número de comprobante o numero del último comprobante en caso de ser mas de uno *
             'CbteFch' 	=> intval(date('Ymd')),//$date_cte, //intval(date('Ymd')), (Opcional) Fecha del comprobante (yyyymmdd) o fecha actual si es nulo *
             'ImpTotal' 	=> 100, //$request->total_amount, // Importe total del comprobante * 
-            'ImpTotConc'=> 0,            
+            /* 'ImpTotConc'=> 0,            
             'ImpNeto' => 100, //$request->total_amount, // Importe neto gravado, al colocar este valor > que  0 tienen que exitir tambien IVA
             'ImpOpEx' 	=> 0,   // Importe exento de IVA
             'ImpIVA' 	=> 0,  //Importe total de IVA
-            'ImpTrib' 	=> 0,   //Importe total de tributos
+            'ImpTrib' 	=> 0,   //Importe total de tributos */
             //'FchServDesde' 	=> $date_init, // (Opcional) Fecha de inicio del servicio (yyyymmdd), obligatorio para Concepto 2 y 3
             //'FchServHasta' 	=> $date_end, // (Opcional) Fecha de fin del servicio (yyyymmdd), obligatorio para Concepto 2 y 3
             //'FchVtoPago' 	=> $date_expir, // (Opcional) Fecha de vencimiento del servicio (yyyymmdd), obligatorio para Concepto 2 y 3   
