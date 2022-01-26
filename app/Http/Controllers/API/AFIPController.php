@@ -163,7 +163,7 @@ class AFIPController extends Controller
             'ImpTrib' 	=> 0,   //Importe total de tributos
             //'FchServDesde' 	=> $date_init, // (Opcional) Fecha de inicio del servicio (yyyymmdd), obligatorio para Concepto 2 y 3
             //'FchServHasta' 	=> $date_end, // (Opcional) Fecha de fin del servicio (yyyymmdd), obligatorio para Concepto 2 y 3
-            'FchVtoPago' 	=> $date_expir, // (Opcional) Fecha de vencimiento del servicio (yyyymmdd), obligatorio para Concepto 2 y 3   
+            //'FchVtoPago' 	=> $date_expir, // (Opcional) Fecha de vencimiento del servicio (yyyymmdd), obligatorio para Concepto 2 y 3   
             'MonId' 	=> $request->currencies_types, //Tipo de moneda usada en el comprobante (ver tipos disponibles)('PES' para pesos argentinos, 'DOL' para dolares) *
             'MonCotiz' 	=> 1,     // Cotización de la moneda usada (1 para pesos argentinos)  
             
