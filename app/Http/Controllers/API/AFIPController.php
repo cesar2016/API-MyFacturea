@@ -155,16 +155,16 @@ class AFIPController extends Controller
             'CbteDesde' => $valfac,  // Número de comprobante o numero del primer comprobante en caso de ser mas de uno *
             'CbteHasta' => $valfac,  // Número de comprobante o numero del último comprobante en caso de ser mas de uno *
             'CbteFch' 	=> '',//$date_cte, //intval(date('Ymd')), (Opcional) Fecha del comprobante (yyyymmdd) o fecha actual si es nulo *
-            'ImpTotal' 	=> $request->total_amount, // Importe total del comprobante * 
+            'ImpTotal' 	=> 1,//$request->total_amount, // Importe total del comprobante * 
             'ImpTotConc'=> 0,            
-            'ImpNeto' 	=> $request->total_amount, // Importe neto gravado
+            'ImpNeto' 	=> 1,//$request->total_amount, // Importe neto gravado
             'ImpOpEx' 	=> 0,   // Importe exento de IVA
             'ImpIVA' 	=> 0,  //Importe total de IVA
             'ImpTrib' 	=> 0,   //Importe total de tributos
             //'FchServDesde' 	=> $date_init, // (Opcional) Fecha de inicio del servicio (yyyymmdd), obligatorio para Concepto 2 y 3
             //'FchServHasta' 	=> $date_end, // (Opcional) Fecha de fin del servicio (yyyymmdd), obligatorio para Concepto 2 y 3
             //'FchVtoPago' 	=> $date_expir, // (Opcional) Fecha de vencimiento del servicio (yyyymmdd), obligatorio para Concepto 2 y 3   
-            'MonId' 	=> $request->currencies_types, //Tipo de moneda usada en el comprobante (ver tipos disponibles)('PES' para pesos argentinos, 'DOL' para dolares) *
+            'MonId' 	=> 'PES',//$request->currencies_types, //Tipo de moneda usada en el comprobante (ver tipos disponibles)('PES' para pesos argentinos, 'DOL' para dolares) *
             'MonCotiz' 	=> 1,     // Cotización de la moneda usada (1 para pesos argentinos)  
             
         );
