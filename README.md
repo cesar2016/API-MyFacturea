@@ -16,7 +16,11 @@
 </p>   
 <hr> 
 <p align="center">
-    <a href="https://ibb.co/gyYdzDK"><img src="https://i.ibb.co/kKZJQhC/postman-Capture.png" alt="postman-Capture" border="0"></a>
+    <a href="https://i.postimg.cc/j5XcpVP9/Whats-App-Image-2022-01-27-at-3-45-28-PM.jpg" alt="postman-Capture" border="0"></a>
+</p>
+<hr>
+<p align="center">
+    <a href="https://i.postimg.cc/xdLtPNC9/Whats-App-Image-2022-01-27-at-3-47-47-PM.jpg" alt="postman-Capture" border="0"></a>
 </p>
 <hr>
 
