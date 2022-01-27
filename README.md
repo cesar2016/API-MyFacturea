@@ -9,7 +9,7 @@
 <p align="center">
     <a href="https://i.postimg.cc/PJ5yh6Mq/Whats-App-Image-2022-01-27-at-3-43-49-PM.jpg" border="0"></a>   
 </p>
-[url=https://postimg.cc/JDSZ55vw][img]https://i.postimg.cc/JDSZ55vw/Whats-App-Image-2022-01-27-at-3-43-49-PM.jpg[/img][/url]
+
 <hr> 
 <p align="center">
     <a href="https://i.postimg.cc/9MV1gXRZ/Whats-App-Image-2022-01-27-at-3-44-33-PM.jpg" alt="api2" border="0"></a>    
