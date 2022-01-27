@@ -6,24 +6,30 @@
 - API para generar facturas electronicas bajo el remen de AFIP (modo Homologacion)
 </p>
 
+<hr> 
 <p align="center">
-    <a href="https://i.postimg.cc/PJ5yh6Mq/Whats-App-Image-2022-01-27-at-3-43-49-PM.jpg" border="0"></a>   
+    <a href="https://i.ibb.co/sKQnkr1/Whats-App-Image-2022-01-27-at-3-45-28-PM.jpg"><img src="https://i.ibb.co/hHQghvg/Whats-App-Image-2022-01-27-at-3-44-33-PM.jpg" alt="Whats-App-Image-2022-01-27-at-3-44-33-PM" border="0"></a>
+
+</p>
+<hr>
+<p align="center">
+   <a href="https://ibb.co/Qvx1GJw"><img src="https://i.ibb.co/23pfBF4/Whats-App-Image-2022-01-27-at-3-43-49-PM.jpg" alt="Whats-App-Image-2022-01-27-at-3-43-49-PM" border="0"></a>
+
+</p>
+<hr>
+
+<p align="center">
+    <a href="https://ibb.co/bvF7xTC"><img src="https://i.ibb.co/B6GwmbQ/Whats-App-Image-2022-01-27-at-3-47-47-PM.jpg" alt="Whats-App-Image-2022-01-27-at-3-47-47-PM" border="0"></a>
+   
 </p>
 
 <hr> 
 <p align="center">
-    <a href="https://i.postimg.cc/9MV1gXRZ/Whats-App-Image-2022-01-27-at-3-44-33-PM.jpg" alt="api2" border="0"></a>    
+    <a href="https://ibb.co/7nVP8Fp"><img src="https://i.ibb.co/Lx6mbfg/Whats-App-Image-2022-01-27-at-3-45-28-PM.jpg" alt="Whats-App-Image-2022-01-27-at-3-45-28-PM" border="0"></a>
+    
 </p>   
-<hr> 
-<p align="center">
-    <a href="https://i.postimg.cc/j5XcpVP9/Whats-App-Image-2022-01-27-at-3-45-28-PM.jpg" alt="postman-Capture" border="0"></a>
-</p>
-<hr>
-<p align="center">
-    <a href="https://i.postimg.cc/xdLtPNC9/Whats-App-Image-2022-01-27-at-3-47-47-PM.jpg" alt="postman-Capture" border="0"></a>
-</p>
-<hr>
 
+<hr>
 ## SOBRE ESTE PROYECTO "API REST FULL CON LARAVEL" 
 
 Se consumio la Libreria SDK Afip, para poder consumir los Web serivices y SOAP de Afip, aun se encuentra en ambiente testing alojada en un VPS de Amazon Web Serices.
